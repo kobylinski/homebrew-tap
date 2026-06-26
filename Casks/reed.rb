@@ -9,11 +9,15 @@ cask "reed" do
 
   app "Reed.app"
 
-  caveats <<~CAVEAT
-    Reed is ad-hoc signed (not yet notarized), so Gatekeeper blocks it on first run.
-    Open it once with:
-      Right-click Reed.app in Applications -> Open -> Open
-    or clear the quarantine flag:
-      xattr -dr com.apple.quarantine "#{appdir}/Reed.app"
-  CAVEAT
+  # Ad-hoc signed (Developer ID notarization coming). Strip the quarantine flag
+  # so Reed opens straight away, no Gatekeeper right-click needed.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Reed.app"]
+  end
+
+  zap trash: [
+    "~/.config/reed",
+    "~/Library/Application Support/reed",
+  ]
 end
