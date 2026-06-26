@@ -9,12 +9,10 @@ cask "reed" do
 
   app "Reed.app"
 
-  # Ad-hoc signed (Developer ID notarization coming). Strip the quarantine flag
-  # so Reed opens straight away, no Gatekeeper right-click needed.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Reed.app"]
-  end
+  caveats <<~CAVEAT
+    Reed is ad-hoc signed (Developer ID notarization is on the way). On first
+    launch, right-click Reed in Applications -> Open -> Open to get past Gatekeeper.
+  CAVEAT
 
   zap trash: [
     "~/.config/reed",
