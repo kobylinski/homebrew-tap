@@ -2,11 +2,11 @@
 # frozen_string_literal: true
 
 # Source template for the Homebrew cask (the menu-bar app). The release
-# workflow substitutes 0.1.0 / 264b34c7660abdbbc4b7efd43bd51af2b3aec02891fc26ad82e417d3614875eb from the notarized DMG and
+# workflow substitutes 0.1.1 / cfa859b69bda6d833d576b39b47a10e6ec2e0c4117d23f5c5966d1c8de923b86 from the notarized DMG and
 # commits the result to kobylinski/homebrew-tap as Casks/yucca.rb.
 cask "yucca" do
-  version "0.1.0"
-  sha256 "264b34c7660abdbbc4b7efd43bd51af2b3aec02891fc26ad82e417d3614875eb"
+  version "0.1.1"
+  sha256 "cfa859b69bda6d833d576b39b47a10e6ec2e0c4117d23f5c5966d1c8de923b86"
 
   url "https://github.com/kobylinski/yucca/releases/download/v#{version}/Yucca-#{version}.dmg"
   name "Yucca"
