@@ -2,34 +2,34 @@
 # frozen_string_literal: true
 
 # Source template for the Homebrew formula (the `yucca` CLI). The release
-# workflow fills 0.1.2 and the per-platform __SHA_*__ from the release
+# workflow fills 0.1.3 and the per-platform __SHA_*__ from the release
 # checksums, then commits the result to kobylinski/homebrew-tap as
 # Formula/yucca.rb.
 class Yucca < Formula
   desc "Local secret management for AI coding assistants"
   homepage "https://github.com/kobylinski/yucca"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/kobylinski/yucca/releases/download/v#{version}/yucca_#{version}_darwin_arm64.tar.gz"
-      sha256 "d573324ac0b93909743400f1b5759322c67efe25bf384a6e8369c7190b91f16f"
+      sha256 "daf4c96bc89c39d12fc271600d94e8ee89691645511b1b9a2af6f593c8906daf"
     end
     on_intel do
       url "https://github.com/kobylinski/yucca/releases/download/v#{version}/yucca_#{version}_darwin_amd64.tar.gz"
-      sha256 "84bb1c4fe6bef35ee2780d66b3606f4832584186199a53512f77efdafc0567bc"
+      sha256 "5969badb36181a3e84c0fd62e854e915f0cabf71e2c5a812daea62c1729c85e1"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/kobylinski/yucca/releases/download/v#{version}/yucca_#{version}_linux_arm64.tar.gz"
-      sha256 "cf6c52da1f381589f21257e027ab0e389b91fe5822d6dca77b4486ddef494874"
+      sha256 "6d02456365a08dfc2828afe1d07c739a02c251459adb46edaa705526c248eda8"
     end
     on_intel do
       url "https://github.com/kobylinski/yucca/releases/download/v#{version}/yucca_#{version}_linux_amd64.tar.gz"
-      sha256 "94366674767933fddfc97b1b33f170b7c6ddc07a4f961e896660bd8e002b286b"
+      sha256 "5a27c8f9001e06d55efd23d8144c0b0dd739df42a6a0e74db36a87d04509cb7c"
     end
   end
 
